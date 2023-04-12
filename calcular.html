@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="calculator.ico">
+    <style>
+        body {
+            background-color: #fcfcfcf3; /* un gris claro */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff; /* un gris oscuro */
+            
+        }
+        text, input, button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        h1 {
+            margin: top 10px;
+            text-align:center;
+            margin-top: 10px;
+            color: #ffffff; /* un gris medio */
+        }
+        form {
+            margin: 50px auto;
+            border-style:outset;
+            padding: 30px;
+            background-color: rgb(2, 97, 100); /* blanco */
+            border-radius: 1px solid #d7e9cf;
+            box-shadow: 0px 0px 0px #d7e9cf;
+            max-width: 500px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #4ea3bd;
+            margin-right: 10px;
+            width: 150px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #1b2325; /* azul claro */
+            color: #f7f7f7;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #85e7e7; /* un tono más claro de azul */
+        }
+        #resultado {
+        font-size: 20px;
+        font-weight: bolder;
+        margin-top: 20px;
+        }
+    </style>
+</head>
+    <body style="background-image: url('fotomate.jpg');">
+        <form>
+            <h1>Calculadora Online</h1>
+            <input type="text" name="num1" placeholder="Numero">
+            <input type="text" name="num2" placeholder="Numero">
+            <br><br>
+            <input type="button" value="Sumar" onclick="sumar()">
+            <input type="button" value="Restar" onclick="restar()">
+            <input type="button" value="Multiplicar" onclick="multiplicar()">
+            <input type="button" value="Dividir" onclick="dividir()">
+            <br><br>
+            Resultado =  <span id="resultado"></span>
+        </form>
+        <script>
+            function sumar(){
+                var num1 = parseInt(document.getElementsByName("num1")[0].value);
+                var num2 = parseInt(document.getElementsByName("num2")[0].value);
+                var resultado = num1 + num2;
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+            function restar(){
+                var num1 = parseInt(document.getElementsByName("num1")[0].value);
+                var num2 = parseInt(document.getElementsByName("num2")[0].value);
+                var resultado = num1 - num2;
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+            function multiplicar(){
+                var num1 = parseInt(document.getElementsByName("num1")[0].value);
+                var num2 = parseInt(document.getElementsByName("num2")[0].value);
+                var resultado = num1 * num2;
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+            function dividir(){
+                var num1 = parseInt(document.getElementsByName("num1")[0].value);
+                var num2 = parseInt(document.getElementsByName("num2")[0].value);
+                var resultado = num1 / num2;
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+        </script>
+    </body>
+</html>
